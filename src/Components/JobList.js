@@ -1,19 +1,36 @@
 import React from 'react';
 import JobPost from './JobPost';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
 
-function JobList() {
-  return(
-    <div>
-      <h1>This is a list of jobs:</h1>
+class JobList extends React.Component {
 
-      <ul>
-          <li><JobPost /></li>
-          <li><JobPost /></li>
-          <li><JobPost /></li>
-          <li><JobPost /></li>
-      </ul>
-    </div>
-  );
+    render() {
+        console.log(this.props.data.loading);
+        console.log(this.props.data);
+
+        return(
+            <div>
+            <h1>This is a list of jobs:</h1>
+
+            <ul>
+                <li><JobPost /></li>
+                <li><JobPost /></li>
+                <li><JobPost /></li>
+                <li><JobPost /></li>
+            </ul>
+            </div>
+        );
+    };
+
 }
 
-export default JobList;
+const FeedQuery = gql`
+query allJobPosts {
+    allJobPosts {
+        jobTitle
+        createdAt
+  }
+}`
+
+export default graphql(FeedQuery)(JobList);
