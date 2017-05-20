@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function JobPost() {
+function JobPost(props) {
+  console.log(props);
   return(
     <div>
-      <h1>This is a job posting</h1>
+      <p><a href={'/job-post/' + props.id}>{props.jobTitle}</a></p>
     </div>
   );
 }
+
+JobPost.propTypes = {
+    jobTitle: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+};
 
 export default JobPost;
