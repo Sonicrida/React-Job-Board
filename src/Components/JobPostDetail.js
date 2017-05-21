@@ -16,20 +16,18 @@ import gql from 'graphql-tag';
 
 function JobPostDetail(props) {
 
-  console.log(props);
+    if (props.data.loading) {
+        return <div>Still Loading</div>
+    }
 
-  if (props.data.loading) {
-      return <div>Still Loading</div>
-  }
+    const JobPost = props.data.JobPost;
 
-  const {JobPost} = props.data.JobPost;
-  console.log(JobPost);
-
-  return(
-    <div>
-      <p><a href={'/job-post/' + props.id}>{JobPost.jobTitle}</a></p>
-    </div>
-  );
+    return(
+        <div>
+            <p>{JobPost.jobTitle}</p>
+        </div>
+    );
+    
 }
 
 // JobPostDetail.propTypes = propTypes;
@@ -38,7 +36,13 @@ const JobPostQuery = gql`
     query jobPost($id: ID!) {
         JobPost(id: $id) {
             id
+            company
+            createdAt
+            jobDescription
+            jobLocation
             jobTitle
+            salaryRange
+            tags
         }
     }
 

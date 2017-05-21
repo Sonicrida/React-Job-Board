@@ -39,7 +39,7 @@ class JobList extends React.Component {
         );
     };
 
-}
+};
 
 JobList.propTypes = {
     data: PropTypes.object.isRequired
