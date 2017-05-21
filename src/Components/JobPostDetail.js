@@ -3,16 +3,23 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
-// const propTypes = {
-//     id: PropTypes.string.isRequired,
-//     company: PropTypes.string.isRequired,
-//     createdAt: PropTypes.string.isRequired,
-//     jobDescription: PropTypes.string.isRequired,
-//     jobLocation: PropTypes.string.isRequired,
-//     jobTitle: PropTypes.string.isRequired,
-//     salaryRange: PropTypes.string.isRequired,
-//     tags: PropTypes.array.isRequired,
-// };
+const propTypes = {
+    data: PropTypes.shape({
+        JobPost: PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            company: PropTypes.string.isRequired,
+            createdAt: PropTypes.string.isRequired,
+            jobDescription: PropTypes.string.isRequired,
+            jobLocation: PropTypes.string.isRequired,
+            jobTitle: PropTypes.string.isRequired,
+            salaryRange: PropTypes.string,
+            tags: PropTypes.array.isRequired,
+        }).isRequired,
+    }).isRequired,
+
+
+    
+};
 
 function JobPostDetail(props) {
 
@@ -30,7 +37,7 @@ function JobPostDetail(props) {
     
 }
 
-// JobPostDetail.propTypes = propTypes;
+JobPostDetail.propTypes = propTypes;
 
 const JobPostQuery = gql`
     query jobPost($id: ID!) {
