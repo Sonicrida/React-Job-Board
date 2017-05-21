@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import App from './App';
-import JobPost from './Components/JobPost'
+import JobPostDetail from './Components/JobPostDetail'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -21,7 +21,7 @@ ReactDOM.render(
     <Router>
       <div>
         <Route exact path='/' component={App} />
-        <Route path='/job-post/:id' component={JobPost} />
+        <Route path='/job-post/:id' component={JobPostDetail} />
       </div>
       
     </Router>
