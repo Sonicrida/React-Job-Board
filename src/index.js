@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import App from './App';
@@ -20,6 +20,9 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
       <div>
+
+        <h1>React Job Board</h1>
+
         <Route exact path='/' component={App} />
         <Route path='/job-post/:id' component={JobPostDetail} />
       </div>
