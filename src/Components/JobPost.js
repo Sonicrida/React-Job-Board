@@ -5,7 +5,6 @@ const propTypes = {
     id: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     createdAt: PropTypes.string.isRequired,
-    jobDescription: PropTypes.string.isRequired,
     jobLocation: PropTypes.string.isRequired,
     jobTitle: PropTypes.string.isRequired,
     salaryRange: PropTypes.string.isRequired,
@@ -17,9 +16,23 @@ function JobPost(props) {
   console.log(props);
 
   return(
-    <div>
-      <p><a href={'/job-post/' + props.id}>{props.jobTitle}</a></p>
-    </div>
+    <li>
+      <a href={'/job-post/' + props.id}>
+        <div>{props.jobTitle}</div>
+        <div>{props.company} - {props.jobLocation}</div>
+        <div>{props.createdAt}</div>
+        <div>{props.salaryRange}</div>
+        <div>
+          <ul>
+            {props.tags.map(function(tag) {
+              return (
+                <li>{tag}</li>
+              );
+            })}
+          </ul>
+        </div>
+      </a>
+    </li>
   );
 }
 
