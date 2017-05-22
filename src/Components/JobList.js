@@ -26,7 +26,6 @@ class JobList extends React.Component {
                                 id={post.id}
                                 company={post.company}
                                 createdAt={post.createdAt}
-                                jobDescription={post.jobDescription}
                                 jobLocation={post.jobLocation}
                                 jobTitle={post.jobTitle}
                                 salaryRange={post.salaryRange}
@@ -51,7 +50,6 @@ const ListingQuery = gql`
             id
             company
             createdAt
-            jobDescription
             jobLocation
             jobTitle
             salaryRange
