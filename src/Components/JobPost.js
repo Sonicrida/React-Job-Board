@@ -13,8 +13,6 @@ const propTypes = {
 
 function JobPost(props) {
 
-  console.log(props);
-
   return(
     <li>
       <a href={'/job-post/' + props.id}>
@@ -26,7 +24,7 @@ function JobPost(props) {
           <ul>
             {props.tags.map(function(tag) {
               return (
-                <li>{tag}</li>
+                <li key={tag}>{tag}</li>
               );
             })}
           </ul>

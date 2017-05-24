@@ -12,8 +12,6 @@ class JobList extends React.Component {
             return <div>Still Loading</div>
         }
 
-        console.log(this.props.data.allJobPosts);
-
         return(
             <div>
                 <h1>This is a list of jobs:</h1>
