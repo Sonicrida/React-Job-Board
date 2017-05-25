@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import App from './App';
-import JobPostDetail from './Components/JobPostDetail'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
@@ -18,14 +16,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <Router>
-      
-      <div>
-        <Route exact path='/' component={App} />
-        <Route path='/job-post/:id' component={JobPostDetail} />
-      </div>
-      
-    </Router>
+    <App/>
   </ApolloProvider>,
   document.getElementById('root')
 );

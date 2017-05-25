@@ -14,7 +14,7 @@ class JobList extends React.Component {
 
         return(
             <div>
-                <h1>This is a list of jobs:</h1>
+                <h1>Jobs List:</h1>
 
                 <ul>
                     {this.props.data.allJobPosts.map(function(post) {

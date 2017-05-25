@@ -22,6 +22,7 @@ function JobPost(props) {
         <div>{props.salaryRange}</div>
         <div>
           <ul>
+            Skills:
             {props.tags.map(function(tag) {
               return (
                 <li key={tag}>{tag}</li>
