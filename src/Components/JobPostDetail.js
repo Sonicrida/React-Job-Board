@@ -18,8 +18,21 @@ function JobPostDetail(props) {
         <div>
             <h1>{props.jobTitle}</h1>
             <h2>{props.jobLocation} </h2>
-            <span>Posted {moment(props.createdAt).fromNow()}</span>
-            <p>{props.jobDescription}</p>
+            <h3>Posted {moment(props.createdAt).fromNow()}</h3>
+            <div>
+                Salary Range <span className="salary">{props.salaryRange}</span>
+            </div>
+            <p className="job-description">{props.jobDescription}</p>
+            <div>
+                Skills:
+                <ul className="skills-list">
+                    {props.tags.map(function(tag) {
+                    return (
+                        <li key={tag}>{tag}</li>
+                    );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 }

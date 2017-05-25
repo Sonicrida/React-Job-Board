@@ -14,7 +14,7 @@ class App extends Component {
 
         
         
-        <div className="App container col-md-8 col-md-offset-2">
+        <div className="App container col-md-6 col-md-offset-3">
           <Nav />
           <Route exact path='/' component={JobList} />
           <Route path='/job-post/:id' component={JobPostDetailContainer} />
