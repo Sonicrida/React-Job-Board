@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const propTypes = {
     id: PropTypes.string.isRequired,
@@ -16,6 +17,8 @@ function JobPostDetail(props) {
     return (
         <div>
             <h1>{props.jobTitle}</h1>
+            <h2>{props.jobLocation} </h2>
+            <span>Posted {moment(props.createdAt).fromNow()}</span>
             <p>{props.jobDescription}</p>
         </div>
     );

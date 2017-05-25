@@ -10,6 +10,7 @@
     "bootstrap": "^3.3.7",
     "graphql-tag": "^2.1.0",
     "jest-cli": "^20.0.3",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-apollo": "^1.2.0",
