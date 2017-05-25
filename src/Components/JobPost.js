@@ -16,7 +16,7 @@ function JobPost(props) {
   return(
     <li>
       <a href={'/job-post/' + props.id}>
-        <div>{props.jobTitle}</div>
+        <h3>{props.jobTitle}</h3>
         <div>{props.company} - {props.jobLocation}</div>
         <div>{props.createdAt}</div>
         <div>{props.salaryRange}</div>
