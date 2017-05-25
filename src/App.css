@@ -15,27 +15,3 @@ li {
 .active {
   font-weight: bold;
 }
-
-.nav li {
-  margin-right: 15px;
-}
-
-.job-description {
-  margin-top: 1rem;
-}
-
-.salary {
-  color: green;
-  font-weight: bold;
-}
-
-.skills-list {
-  display: flex;
-  justify-content: left;
-}
-
-.skills-list li {
-  margin: 10px;
-  padding: 10px;
-  border: 2px solid black;
-}

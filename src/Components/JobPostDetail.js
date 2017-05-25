@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import styled from 'styled-components';
 
 const propTypes = {
     id: PropTypes.string.isRequired,
@@ -13,6 +14,26 @@ const propTypes = {
     tags: PropTypes.array.isRequired,
 }
 
+const Jobdescription = styled.p`
+    margin-top: 1rem;
+`;
+
+const Salary = styled.span`
+    color: green;
+    font-weight: bold;
+`;
+
+const SkillsList = styled.ul`
+    display: flex;
+    justify-content: left;
+`;
+
+const SkillsListItem = styled.li`
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+`;
+
 function JobPostDetail(props) {
     return (
         <div>
@@ -20,18 +41,18 @@ function JobPostDetail(props) {
             <h2>{props.jobLocation} </h2>
             <h3>Posted {moment(props.createdAt).fromNow()}</h3>
             <div>
-                Salary Range <span className="salary">{props.salaryRange}</span>
+                Salary Range <Salary>{props.salaryRange}</Salary>
             </div>
-            <p className="job-description">{props.jobDescription}</p>
+            <Jobdescription>{props.jobDescription}</Jobdescription>
             <div>
                 Skills:
-                <ul className="skills-list">
+                <SkillsList>
                     {props.tags.map(function(tag) {
                     return (
-                        <li key={tag}>{tag}</li>
+                        <SkillsListItem key={tag}>{tag}</SkillsListItem>
                     );
                     })}
-                </ul>
+                </SkillsList>
             </div>
         </div>
     );

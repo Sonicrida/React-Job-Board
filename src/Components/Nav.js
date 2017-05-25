@@ -2,30 +2,30 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledList = styled.ul`
+const List = styled.ul`
     display: flex;
     font-size: 2rem;
 `;
 
-const StyledListItem = styled.li`
+const ListItem = styled.li`
     margin-right: 15px;
 `;
 
 function Nav() {
     return (
         <nav>
-            <StyledList>
-                <StyledListItem>
+            <List>
+                <ListItem>
                     <NavLink exact activeClassName='active' to='/'>
                         Home
                     </NavLink>
-                </StyledListItem>
-                <StyledListItem>
+                </ListItem>
+                <ListItem>
                     <NavLink activeClassName='active' to='/post'>
                         Post A Job
                     </NavLink>
-                </StyledListItem>
-            </StyledList>
+                </ListItem>
+            </List>
         </nav>
     );
 }
