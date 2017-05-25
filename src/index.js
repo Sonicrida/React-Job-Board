@@ -19,10 +19,8 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
+      
       <div>
-
-        <h1>React Job Board</h1>
-
         <Route exact path='/' component={App} />
         <Route path='/job-post/:id' component={JobPostDetail} />
       </div>

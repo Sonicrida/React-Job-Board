@@ -6,8 +6,9 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-      <div className="App container">
+      <div className="App container col-md-8 col-md-offset-2">
         <JobList />
+
       </div>
     );
   }
