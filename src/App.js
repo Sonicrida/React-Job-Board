@@ -9,24 +9,13 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
-
       <Router>
-
-        
-        
         <div className="App container col-md-6 col-md-offset-3">
           <Nav />
           <Route exact path='/' component={JobList} />
           <Route path='/job-post/:id' component={JobPostDetailContainer} />
         </div>
-        
       </Router>
-
-      
-
-        
-
-      
     );
   }
 }
