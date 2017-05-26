@@ -21,7 +21,7 @@ function Nav() {
                     </NavLink>
                 </ListItem>
                 <ListItem>
-                    <NavLink activeClassName='active' to='/post'>
+                    <NavLink activeClassName='active' to='/create-job-post'>
                         Post A Job
                     </NavLink>
                 </ListItem>
