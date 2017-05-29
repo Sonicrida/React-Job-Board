@@ -42,7 +42,7 @@ JobList.propTypes = {
     data: PropTypes.object.isRequired
 };
 
-const ListingQuery = gql`
+export const ListingQuery = gql`
     query allJobPosts {
         allJobPosts {
             id

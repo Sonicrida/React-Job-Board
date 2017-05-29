@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import { ListingQuery } from './JobList';
 //import styled from 'styled-components';
 
 class CreateJobPost extends Component {
@@ -11,11 +12,16 @@ class CreateJobPost extends Component {
 
         this.state = {
             jobTitle: '',
+            jobDescription: '',
         };
     }
 
     handleJobTitleChange = (event) => {
         this.setState({ jobTitle: event.target.value });
+    };
+
+    handleJobDescriptionChange = (event) => {
+        this.setState({ jobDescription: event.target.value });
     };
 
     render() {
@@ -27,31 +33,49 @@ class CreateJobPost extends Component {
                     onChange={this.handleJobTitleChange}
                 />
 
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
+                />
+
                 <button onClick={this.handlePost}>Post</button>
             </div>
         );
     }
 
     handlePost = () => {
-        const { jobTitle } = this.state;
-        this.props.addJobPost({ variables: {jobTitle} })
+        const { jobTitle, jobDescription } = this.state;
+        this.props.addJobPost({ variables: {jobTitle, jobDescription} })
         .then(() => {
-            window.location.pathname = '/';
-            //this.props.history.push('/');
+            //window.location.pathname = '/';
+            this.props.history.push('/');
         });
     }
 }
 
 const addMutation = gql`
-    mutation addJobPost($jobTitle: String!) {
+    mutation addJobPost($jobTitle: String!, $jobDescription: String!) {
         createJobPost(
-            jobTitle: $jobTitle
+            jobTitle: $jobTitle,
+            jobDescription: $jobDescription
         ) {
             id
         }
     }
 `;
 
-const CreateJobPostWithMutation = graphql(addMutation, {name: 'addJobPost'})(CreateJobPost);
+console.log(ListingQuery);
+
+const CreateJobPostWithMutation = graphql(addMutation, {
+    name: 'addJobPost',
+    options: (props) => ({
+        refetchQueries: [
+            {
+                query: ListingQuery
+            }
+        ]
+    })
+})(CreateJobPost);
 
 export default withRouter(CreateJobPostWithMutation);
