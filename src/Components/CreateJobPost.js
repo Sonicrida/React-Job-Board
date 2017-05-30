@@ -48,7 +48,6 @@ class CreateJobPost extends Component {
         const { jobTitle, jobDescription } = this.state;
         this.props.addJobPost({ variables: {jobTitle, jobDescription} })
         .then(() => {
-            //window.location.pathname = '/';
             this.props.history.push('/');
         });
     }
