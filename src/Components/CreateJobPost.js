@@ -13,6 +13,11 @@ class CreateJobPost extends Component {
         this.state = {
             jobTitle: '',
             jobDescription: '',
+            jobLocation: '',
+            company: '',
+            salaryRange: '',
+            isRemote: false,
+            tags: []
         };
     }
 
@@ -24,6 +29,26 @@ class CreateJobPost extends Component {
         this.setState({ jobDescription: event.target.value });
     };
 
+    handleJobLocationChange = (event) => {
+        this.setState({ jobLocations: event.target.value });
+    };
+
+    handleCompanyChange = (event) => {
+        this.setState({ company: event.target.value });
+    };
+
+    handleSalaryRangeChange = (event) => {
+        this.setState({ salaryRange: event.target.value });
+    };
+
+    handleIsRemoteChange = (event) => {
+        this.setState({ isRemote: event.target.value });
+    };
+
+    handleTagsChange = (event) => {
+        this.setState({ tags: event.target.value });
+    };
+
     render() {
         return (
             <div>
@@ -31,6 +56,36 @@ class CreateJobPost extends Component {
                     type="text"
                     value={this.state.jobTitle}
                     onChange={this.handleJobTitleChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.jobDescription}
+                    onChange={this.handleJobDescriptionChange}
                 />
 
                 <input 
