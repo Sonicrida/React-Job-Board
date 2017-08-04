@@ -52,11 +52,17 @@ class CreateJobPost extends Component {
     render() {
         return (
             <div>
-                <input 
-                    type="text"
-                    value={this.state.jobTitle}
-                    onChange={this.handleJobTitleChange}
-                />
+
+                <label htmlFor="">
+                    Job Title
+                    <input 
+                        type="text"
+                        value={this.state.jobTitle}
+                        onChange={this.handleJobTitleChange}
+                    />
+                </label>
+
+                
 
                 <input 
                     type="text"
@@ -66,32 +72,32 @@ class CreateJobPost extends Component {
 
                 <input 
                     type="text"
-                    value={this.state.jobDescription}
+                    value={this.state.jobLocation}
+                    onChange={this.handleJobLocationChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.company}
+                    onChange={this.handleCompanyChange}
+                />
+
+                <input 
+                    type="text"
+                    value={this.state.salaryRange}
+                    onChange={this.handleSalaryRangeChange}
+                />
+
+                <input 
+                    type="checkbox"
+                    value={this.state.isRemote}
                     onChange={this.handleJobDescriptionChange}
                 />
 
                 <input 
                     type="text"
-                    value={this.state.jobDescription}
-                    onChange={this.handleJobDescriptionChange}
-                />
-
-                <input 
-                    type="text"
-                    value={this.state.jobDescription}
-                    onChange={this.handleJobDescriptionChange}
-                />
-
-                <input 
-                    type="text"
-                    value={this.state.jobDescription}
-                    onChange={this.handleJobDescriptionChange}
-                />
-
-                <input 
-                    type="text"
-                    value={this.state.jobDescription}
-                    onChange={this.handleJobDescriptionChange}
+                    value={this.state.tags}
+                    onChange={this.handleTagsChange}
                 />
 
                 <button onClick={this.handlePost}>Post</button>
@@ -100,8 +106,8 @@ class CreateJobPost extends Component {
     }
 
     handlePost = () => {
-        const { jobTitle, jobDescription } = this.state;
-        this.props.addJobPost({ variables: {jobTitle, jobDescription} })
+        const { jobTitle, jobDescription, jobLocation, company, salaryRange, isRemote, tags } = this.state;
+        this.props.addJobPost({ variables: {jobTitle, jobDescription, jobLocation, company, salaryRange, isRemote, tags} })
         .then(() => {
             this.props.history.push('/');
         });
