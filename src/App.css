@@ -15,3 +15,7 @@ li {
 .active {
   font-weight: bold;
 }
+
+a {
+  color: rgba(102, 58, 195, 1) !important;
+}

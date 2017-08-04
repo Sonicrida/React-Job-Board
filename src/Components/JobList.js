@@ -13,25 +13,29 @@ class JobList extends React.Component {
         }
 
         return(
-            <div>
-                <h1>Jobs List:</h1>
+            <div className="columns is-centered">
 
-                <ul>
-                    {this.props.data.allJobPosts.map(function(post) {
-                        return (
-                            <JobPost
-                                key={post.id}
-                                id={post.id}
-                                company={post.company}
-                                createdAt={post.createdAt}
-                                jobLocation={post.jobLocation}
-                                jobTitle={post.jobTitle}
-                                salaryRange={post.salaryRange}
-                                tags={post.tags}
-                            />
-                        )
-                    })}
-                </ul>
+                <div className="column is-two-thirds">
+                    <h1 className="title">Jobs List:</h1>
+
+                    <ul>
+                        {this.props.data.allJobPosts.map(function(post) {
+                            return (
+                                <JobPost
+                                    key={post.id}
+                                    id={post.id}
+                                    company={post.company}
+                                    createdAt={post.createdAt}
+                                    jobLocation={post.jobLocation}
+                                    jobTitle={post.jobTitle}
+                                    salaryRange={post.salaryRange}
+                                    tags={post.tags}
+                                />
+                            )
+                        })}
+                    </ul>
+                </div>
+                
             </div>
         );
     };

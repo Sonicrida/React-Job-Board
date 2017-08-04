@@ -3,29 +3,37 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const List = styled.ul`
-    display: flex;
-    font-size: 2rem;
+    /*display: flex;
+    font-size: 2rem;*/
 `;
 
 const ListItem = styled.li`
-    margin-right: 15px;
+    /*margin-right: 15px;*/
 `;
 
 function Nav() {
     return (
-        <nav>
-            <List>
-                <ListItem>
-                    <NavLink exact activeClassName='active' to='/'>
-                        Home
-                    </NavLink>
-                </ListItem>
-                <ListItem>
-                    <NavLink activeClassName='active' to='/create-job-post'>
+        <nav className="navbar is-transparent has-text-white">
+
+            <div className="navbar-brand">
+                <NavLink exact className="navbar-item" activeClassName='active' to='/'>
+                    React Job Board
+                </NavLink>
+            </div>
+
+            <div className="navbar-menu">
+                <div className="navbar-start">
+                    <NavLink className="navbar-item" activeClassName='active' to='/create-job-post'>
                         Post A Job
                     </NavLink>
-                </ListItem>
-            </List>
+                </div>
+                    
+            </div>
+
+            
+
+
+
         </nav>
     );
 }

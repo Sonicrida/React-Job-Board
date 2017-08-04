@@ -14,7 +14,7 @@ const propTypes = {
 function JobPost(props) {
 
   return(
-    <li>
+    <li className="box">
       <a href={'/job-post/' + props.id}>
         <h3>{props.jobTitle}</h3>
         <div>{props.company} - {props.jobLocation}</div>
