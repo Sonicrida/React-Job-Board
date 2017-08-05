@@ -1,15 +1,15 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+/*@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
 
 body {
   font-family: 'Open Sans', sans-serif !important;
-}
+}*/
 
 ul {
-  padding: 0;
+  /*padding: 0;*/
 }
 
 li {
-  list-style-type: none;
+  /*list-style-type: none;*/
 }
 
 .active {
